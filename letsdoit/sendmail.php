@@ -1,13 +1,14 @@
 <?php
 
 
-
-  /**
-   * Loads the config file config.php containing the databse details
-   *
-   */
+  $host = "localhost";
+  $username = "intern";
+  $password = "@hng.intern1";
+  $db = "hng";
+   // Create connection
+  $connection = mysql_connect($host, $username, $password);
   $admin_email = 'xyluz@ymail.com';
-  $config = include('config.php');
+  $config = include($connection);
   $dsn = 'mysql:host='.$config['host'].';dbname='.$config['dbname'];
   $con = new PDO($dsn, $config['username'], $config['pass']);
 
